@@ -109,3 +109,32 @@ const voteAbove70Above120 = facultyStud.filter((elem) => {
 });
 
 console.log(voteAbove70Above120);
+
+/*
+SNACK 3
+Creare un array di oggetti:
+Ogni oggetto descriverà una bici da corsa con le seguenti proprietà: nome e peso.
+Stampare in console la bici con peso minore utilizzando destructuring e template literal
+*/
+
+let bicycle = [
+    { nome: "Bici1", peso: 10 },
+    { nome: "Bici2", peso: 12 },
+    { nome: "Bici3", peso: 9 },
+    { nome: "Bici4", peso: 14 },
+    { nome: "Bici5", peso: 13 },
+    { nome: "Bici6", peso: 11 },
+    { nome: "Bici7", peso: 15 },
+    { nome: "Bici8", peso: 10 },
+    { nome: "Bici9", peso: 12 },
+    { nome: "Bici10", peso: 14 }
+];
+
+let bicycleDec = [...bicycle];
+console.log(bicycleDec);
+
+bicycleDec.filter((el) => {
+    if(el.peso < bicycleDec[0].peso) {
+        console.log(`La bici con peso minore è ${el.nome}`);
+    }
+});
