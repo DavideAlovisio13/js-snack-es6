@@ -138,3 +138,49 @@ bicycleDec.filter((el) => {
         console.log(`La bici con peso minore è ${el.nome}`);
     }
 });
+
+/*
+SNACK 4
+Creare un array di oggetti di squadre di calcio. Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+Generare numeri random al posto degli 0 nelle proprietà: punti fatti e falli subiti.
+Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
+*/
+
+// utility 
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+let footballClub = [
+    {"nome": "Juventus", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Milan", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Inter", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Roma", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Napoli", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Lazio", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Atalanta", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Fiorentina", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Torino", "punti_fatti": 0, "falli_subiti": 0},
+    {"nome": "Sampdoria", "punti_fatti": 0, "falli_subiti": 0}
+]
+
+let footballClubRnd = footballClub.map((element) => {
+    return {
+        ...element,
+        punti_fatti: getRndInteger(0, 100),
+        falli_subiti: getRndInteger(0, 100)
+    };
+})
+
+console.log(footballClubRnd);
+
+let footballClubNameScore = footballClubRnd.map((el) => {
+    return {
+        nome: el.nome,
+        falli_subiti: el.falli_subiti
+    }
+})
+
+console.log(footballClubNameScore);
+
